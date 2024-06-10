@@ -15,9 +15,25 @@ a:hover {
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+
+.log {
+  grid-column: span 3 / span 3;
+  min-height: 2rem;
+  white-space: pre-wrap;
 }
 
 .choice-chance,
 .other-chance {
   grid-column: span 3 / span 3;
+}
+
+.door {
+  height: 8rem;
+  width: 4rem;
+  background-color: rgb(104, 50, 6);
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }

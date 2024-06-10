@@ -1,8 +1,8 @@
-const Door = ({ props }: { props: { letter: string } }) => {
-  const { letter } = props;
+const Door = ({ props }: { props: { label: string } }) => {
+  const { label } = props;
   return (
-    <div>
-      <p>Door {letter}</p>
+    <div className="door">
+      <p>{label}</p>
     </div>
   );
 };
