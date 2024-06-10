@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  filter: brightness(85%);
+}
+
+.title-header {
+  grid-column: span 3 / span 3;
+}
+
+.main-content {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.choice-chance,
+.other-chance {
+  grid-column: span 3 / span 3;
+}
