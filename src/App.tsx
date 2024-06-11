@@ -14,6 +14,8 @@ function App() {
   const [gameState, setGameState] = useState<"choice" | "switch" | "result">(
     "choice"
   );
+  const [wins, setWins] = useState<number>(0);
+  const [losses, setLosses] = useState<number>(0);
 
   const onContinue = () => {
     if (choice === 0 || gameState === "switch") return;
@@ -52,6 +54,8 @@ function App() {
     openedDoor,
     gameState,
     setGameState,
+    setWins,
+    setLosses,
   };
 
   return (
@@ -62,6 +66,8 @@ function App() {
       >
         <h1>Monty Hall Problem</h1>
       </a>
+
+      <p className="score">{`Prizes: ${wins} Devourings: ${losses}`}</p>
 
       <p className="log">{log}</p>
 
