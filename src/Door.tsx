@@ -7,11 +7,13 @@ const Door = ({
     setChoice: React.Dispatch<React.SetStateAction<number>>;
     setPrize: React.Dispatch<React.SetStateAction<number>>;
     setLog: React.Dispatch<React.SetStateAction<string>>;
+    gameState: "choice" | "switch" | "result";
   };
 }) => {
-  const { number, choice, setChoice, setPrize, setLog } = props;
+  const { number, choice, setChoice, setPrize, setLog, gameState } = props;
 
   const handleMouseDown = () => {
+    if (gameState === "switch") return;
     setChoice(number);
     setPrize(Math.floor(Math.random() * 3 + 1));
     setLog(
