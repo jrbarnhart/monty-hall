@@ -20,15 +20,15 @@ function App() {
       <p className="log">{log}</p>
 
       <div className={`choice-chance choice-${choice.toString()}`}>
-        <p>1/3 or ~33.3%</p>
+        <p>~33.3%</p>
       </div>
 
-      <Door props={{ number: 1, setChoice }} />
-      <Door props={{ number: 2, setChoice }} />
-      <Door props={{ number: 3, setChoice }} />
+      <Door props={{ number: 1, choice, setChoice, setLog }} />
+      <Door props={{ number: 2, choice, setChoice, setLog }} />
+      <Door props={{ number: 3, choice, setChoice, setLog }} />
 
-      <div className="other-chance">
-        <p>2/3 or ~66.6%</p>
+      <div className={`other-chance other-${choice}`}>
+        <p>~66.6%</p>
       </div>
     </main>
   );

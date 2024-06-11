@@ -3,11 +3,12 @@ const Door = ({
 }: {
   props: {
     number: number;
+    choice: number;
     setChoice: React.Dispatch<React.SetStateAction<number>>;
     setLog: React.Dispatch<React.SetStateAction<string>>;
   };
 }) => {
-  const { number, setChoice, setLog } = props;
+  const { number, choice, setChoice, setLog } = props;
 
   const handleMouseDown = () => {
     setChoice(number);
@@ -17,7 +18,11 @@ const Door = ({
   };
 
   return (
-    <div onMouseDown={handleMouseDown} className="door" role="button">
+    <div
+      onMouseDown={handleMouseDown}
+      className={`door ${number !== choice && choice !== 0 ? "other" : ""}`}
+      role="button"
+    >
       <p>{`Door #${number}`}</p>
     </div>
   );
