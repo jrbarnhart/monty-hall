@@ -16,20 +16,31 @@ function App() {
   );
 
   const onContinue = () => {
-    if (choice === 0 || gameState !== "choice") return;
-    setGameState("switch");
-    const numbers: [1, 2, 3] = [1, 2, 3];
-    let monsterDoor: 0 | 1 | 2 | 3 = 0;
-    for (const num of numbers) {
-      if (num !== prize && num !== choice) {
-        monsterDoor = num;
-        break;
+    if (choice === 0 || gameState === "switch") return;
+    if (gameState === "choice") {
+      setGameState("switch");
+      const numbers: [1, 2, 3] = [1, 2, 3];
+      let monsterDoor: 0 | 1 | 2 | 3 = 0;
+      for (const num of numbers) {
+        if (num !== prize && num !== choice) {
+          monsterDoor = num;
+          break;
+        }
       }
+      setOpenedDoor(monsterDoor);
+      setLog(
+        `Door #${monsterDoor} was opened, revealing a monster's lair.\nYou may now choose the other door, or keep your original choice.`
+      );
     }
-    setOpenedDoor(monsterDoor);
-    setLog(
-      `Door #${monsterDoor} was opened, revealing a monster's lair.\nYou may now choose the other door, or keep your original choice.`
-    );
+    if (gameState === "result") {
+      setLog(
+        "One door has a prize.\nTwo doors have a monster.\nChoose a door."
+      );
+      setChoice(0);
+      setPrize(Math.floor(Math.random() * 3 + 1) as 1 | 2 | 3);
+      setOpenedDoor(0);
+      setGameState("choice");
+    }
   };
 
   const generalDoorProps = {
@@ -83,7 +94,7 @@ function App() {
 
       <button
         className={`continue ${
-          (choice === 0 || gameState !== "choice") && "hidden"
+          (choice === 0 || gameState === "switch") && "hidden"
         }`}
         disabled={choice === 0}
         onMouseDown={onContinue}
