@@ -32,6 +32,17 @@ function App() {
     );
   };
 
+  const generalDoorProps = {
+    choice,
+    setChoice,
+    prize,
+    setPrize,
+    setLog,
+    openedDoor,
+    gameState,
+    setGameState,
+  };
+
   return (
     <main className="main-content">
       <a
@@ -50,34 +61,19 @@ function App() {
       <Door
         props={{
           doorNumber: 1,
-          choice,
-          setChoice,
-          setPrize,
-          setLog,
-          openedDoor,
-          gameState,
+          ...generalDoorProps,
         }}
       />
       <Door
         props={{
           doorNumber: 2,
-          choice,
-          setChoice,
-          setPrize,
-          setLog,
-          openedDoor,
-          gameState,
+          ...generalDoorProps,
         }}
       />
       <Door
         props={{
           doorNumber: 3,
-          choice,
-          setChoice,
-          setPrize,
-          setLog,
-          openedDoor,
-          gameState,
+          ...generalDoorProps,
         }}
       />
 
