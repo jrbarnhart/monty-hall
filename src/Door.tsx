@@ -13,7 +13,7 @@ const Door = ({
   const { number, choice, setChoice, setPrize, setLog, gameState } = props;
 
   const handleMouseDown = () => {
-    if (gameState === "switch") return;
+    if (gameState !== "choice") return;
     setChoice(number);
     setPrize(Math.floor(Math.random() * 3 + 1));
     setLog(
