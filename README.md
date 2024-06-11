@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# Monty Hall Problem Simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application built with Vite, React, and TypeScript that simulates the famous [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem).
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Monty Hall problem is a probability puzzle where the player is presented with three doors. Behind one door is a prize, and behind the other two are monsters. After an initial choice, one of the remaining doors with a monster is revealed. The player then has the option to switch their choice to the other unopened door.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Simulates the Monty Hall problem with interactive door selection.
+- Tracks wins, losses, and calculates win rate.
+- Provides informative logs during gameplay.
+- Allows switching of door choices based on game strategy.
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Choose a door initially.
+2. Decide whether to switch doors after one monster door is revealed.
+3. Track your win rate as you play multiple rounds.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+
+To run the project locally:
+
+1. Clone this repository.
+2. Install dependencies with `npm install` or `yarn install`.
+3. Start the development server with `npm run dev` or `yarn dev`.
+4. Open your browser and navigate to `http://localhost:5173` or whatever port you configure Vite's dev server to use.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
