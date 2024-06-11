@@ -45,6 +45,7 @@ a:hover {
   background-color: rgb(35, 30, 40);
   padding: 18px;
   border-radius: 12px;
+  box-shadow: 2px 2px black inset;
 }
 
 .choice-chance {
@@ -95,6 +96,7 @@ a:hover {
   grid-row-start: 5;
   user-select: none;
   position: relative;
+  box-shadow: 2px 2px black;
 }
 
 .opened.door {
@@ -157,6 +159,7 @@ a:hover {
   font-weight: bold;
   border: solid rgb(68, 68, 68) 4px;
   border-radius: 12px;
+  box-shadow: 2px 2px black;
 }
 
 .continue:hover {
