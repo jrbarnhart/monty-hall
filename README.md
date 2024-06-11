@@ -2,6 +2,8 @@
 
 This project is a web application built with Vite, React, and TypeScript that simulates the famous [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem).
 
+Try it out on [Github Pages](https://jrbarnhart.github.io/monty-hall/)
+
 ## Description
 
 The Monty Hall problem is a probability puzzle where the player is presented with three doors. Behind one door is a prize, and behind the other two are monsters. After an initial choice, one of the remaining doors with a monster is revealed. The player then has the option to switch their choice to the other unopened door.
