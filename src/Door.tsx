@@ -1,8 +1,15 @@
-const Door = ({ props }: { props: { label: string } }) => {
-  const { label } = props;
+const Door = ({
+  props,
+}: {
+  props: {
+    number: number;
+    setChoice: React.Dispatch<React.SetStateAction<number>>;
+  };
+}) => {
+  const { number, setChoice } = props;
   return (
-    <div className="door">
-      <p>{label}</p>
+    <div onMouseDown={() => setChoice(number)} className="door" role="button">
+      <p>{`Door #${number}`}</p>
     </div>
   );
 };
