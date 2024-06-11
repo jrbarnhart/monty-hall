@@ -24,9 +24,20 @@ a:hover {
   white-space: pre-wrap;
 }
 
-.choice-chance,
-.other-chance {
-  grid-column: span 3 / span 3;
+.choice-0 {
+  opacity: 0%;
+}
+
+.choice-1 {
+  grid-column: 1/1;
+}
+
+.choice-2 {
+  grid-column: 2/2;
+}
+
+.choice-3 {
+  grid-column: 3/3;
 }
 
 .door {
@@ -36,4 +47,11 @@ a:hover {
   display: grid;
   justify-items: center;
   align-items: center;
+  cursor: pointer;
+  grid-row-start: 4;
+}
+
+.other-chance {
+  grid-column: span 3 / span 3;
+  grid-row: 5/5;
 }
