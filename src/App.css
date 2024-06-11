@@ -16,6 +16,9 @@ a:hover {
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 6px;
+  max-width: 1024px;
+  min-width: 350px;
+  margin: 0 auto;
 }
 
 .log {
@@ -49,9 +52,26 @@ a:hover {
   align-items: center;
   cursor: pointer;
   grid-row-start: 4;
+  user-select: none;
 }
 
 .other-chance {
   grid-column: span 3 / span 3;
   grid-row: 5/5;
+}
+
+.other-0 {
+  opacity: 0%;
+}
+
+.other-1 {
+  grid-column: 1/2;
+}
+
+.other-2 {
+  grid-column: 2/2;
+}
+
+.other-3 {
+  grid-column: 2/3;
 }
