@@ -13,7 +13,8 @@ function App() {
   );
 
   const onContinue = () => {
-    if (choice === 0) return;
+    if (choice === 0 || gameState !== "choice") return;
+    setGameState("switch");
   };
 
   return (
@@ -47,7 +48,7 @@ function App() {
 
       <button
         className={`continue ${
-          choice !== 0 || gameState !== "choice" ? "" : "hidden"
+          (choice === 0 || gameState !== "choice") && "hidden"
         }`}
         disabled={choice === 0}
         onMouseDown={onContinue}
