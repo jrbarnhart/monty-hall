@@ -2,7 +2,7 @@
 
 This project is a web application built with Vite, React, and TypeScript that simulates the famous [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem).
 
-Try it out on [Github Pages](https://jrbarnhart.github.io/monty-hall/)
+[Check out the live preview.](https://jrbarnhart.github.io/monty-hall/)
 
 ## Description
 
