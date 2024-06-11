@@ -27,6 +27,9 @@ function App() {
       }
     }
     setOpenedDoor(monsterDoor);
+    setLog(
+      `Door #${monsterDoor} was opened, revealing a monster's lair.\nYou may now choose the other door, or keep your original choice.`
+    );
   };
 
   return (
