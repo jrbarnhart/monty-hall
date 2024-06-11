@@ -40,7 +40,7 @@ const Door = ({
       let resultText = "";
       if (doorNumber === prize) {
         resultText =
-          "You open the door and walk into the room...\n And you find the prize!\nCongratulations!";
+          "You open the door and walk into the room...\n You find the fabulous prize!\nCongratulations!";
       } else {
         resultText =
           "You open the door and walk into the room...\nYou don't even have time to scream before the beast devours you.";
@@ -54,7 +54,12 @@ const Door = ({
       onMouseDown={handleMouseDown}
       className={`door ${
         doorNumber !== choice && choice !== 0 ? "other" : ""
-      } ${openedDoor === doorNumber ? "opened" : ""}`}
+      } ${
+        openedDoor === doorNumber ||
+        (gameState === "result" && doorNumber !== prize)
+          ? "opened"
+          : ""
+      } ${gameState === "result" && doorNumber === prize && "prize"}`}
       role="button"
     >
       <p>{`Door #${doorNumber}`}</p>

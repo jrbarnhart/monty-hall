@@ -87,6 +87,11 @@ a:hover {
   background-color: rgb(156, 0, 0);
 }
 
+.prize.door {
+  background-color: gold;
+  color: black;
+}
+
 .other-chance {
   grid-row: 5/5;
   font-weight: bold;
