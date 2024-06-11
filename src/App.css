@@ -22,7 +22,8 @@ a:hover {
 
 .log {
   grid-column: span 3 / span 3;
-  min-height: 2rem;
+  width: 100%;
+  max-width: 600px;
   white-space: pre-wrap;
   font-size: x-large;
   font-weight: bold;
@@ -47,6 +48,7 @@ a:hover {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid orange;
+  z-index: 10;
 }
 
 .choice-0 {
@@ -69,12 +71,14 @@ a:hover {
   height: 8rem;
   width: 4rem;
   background-color: rgb(104, 50, 6);
+  border-radius: 4px;
   display: grid;
   justify-items: center;
   align-items: center;
   cursor: pointer;
   grid-row-start: 4;
   user-select: none;
+  position: relative;
 }
 
 .other-chance {
@@ -98,4 +102,20 @@ a:hover {
 
 .other-3 {
   grid-column: 1 / span 2;
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid green;
+  display: none;
+}
+
+.other.door::before {
+  display: block;
 }
