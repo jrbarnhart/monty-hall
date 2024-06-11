@@ -6,8 +6,11 @@ function App() {
   const [log, setLog] = useState<string>(
     "One door has a prize.\nTwo doors have a monster.\nChoose a door."
   );
-  const [choice, setChoice] = useState<number>(0);
-  const [prize, setPrize] = useState<number>(Math.floor(Math.random() * 3 + 1));
+  const [choice, setChoice] = useState<0 | 1 | 2 | 3>(0);
+  const [prize, setPrize] = useState<1 | 2 | 3>(
+    Math.floor(Math.random() * 3 + 1) as 1 | 2 | 3
+  );
+  const [openedDoor, setOpenedDoor] = useState<0 | 1 | 2 | 3>(0);
   const [gameState, setGameState] = useState<"choice" | "switch" | "result">(
     "choice"
   );
@@ -15,6 +18,15 @@ function App() {
   const onContinue = () => {
     if (choice === 0 || gameState !== "choice") return;
     setGameState("switch");
+    const numbers: [1, 2, 3] = [1, 2, 3];
+    let monsterDoor: 0 | 1 | 2 | 3 = 0;
+    for (const num of numbers) {
+      if (num !== prize && num !== choice) {
+        monsterDoor = num;
+        break;
+      }
+    }
+    setOpenedDoor(monsterDoor);
   };
 
   return (
@@ -33,13 +45,37 @@ function App() {
       </div>
 
       <Door
-        props={{ number: 1, choice, setChoice, setPrize, setLog, gameState }}
+        props={{
+          doorNumber: 1,
+          choice,
+          setChoice,
+          setPrize,
+          setLog,
+          openedDoor,
+          gameState,
+        }}
       />
       <Door
-        props={{ number: 2, choice, setChoice, setPrize, setLog, gameState }}
+        props={{
+          doorNumber: 2,
+          choice,
+          setChoice,
+          setPrize,
+          setLog,
+          openedDoor,
+          gameState,
+        }}
       />
       <Door
-        props={{ number: 3, choice, setChoice, setPrize, setLog, gameState }}
+        props={{
+          doorNumber: 3,
+          choice,
+          setChoice,
+          setPrize,
+          setLog,
+          openedDoor,
+          gameState,
+        }}
       />
 
       <div className={`other-chance other-${choice}`}>

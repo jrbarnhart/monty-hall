@@ -82,6 +82,10 @@ a:hover {
   position: relative;
 }
 
+.opened.door {
+  background-color: black;
+}
+
 .other-chance {
   grid-row: 5/5;
   font-weight: bold;
