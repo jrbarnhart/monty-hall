@@ -30,6 +30,13 @@ function App() {
       <div className={`other-chance other-${choice}`}>
         <p>~66.6%</p>
       </div>
+
+      <button
+        className={`continue ${choice !== 0 ? "" : "hidden"}`}
+        disabled={choice === 0}
+      >
+        Continue
+      </button>
     </main>
   );
 }

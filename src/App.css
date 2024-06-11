@@ -23,6 +23,7 @@ a:hover {
 .log {
   grid-column: span 3 / span 3;
   width: 100%;
+  height: 250px;
   max-width: 600px;
   white-space: pre-wrap;
   font-size: x-large;
@@ -118,4 +119,30 @@ a:hover {
 
 .other.door::before {
   display: block;
+}
+
+.continue {
+  grid-row: 6/6;
+  grid-column: span 3 / span 3;
+  margin-top: 3rem;
+  padding: 4px 16px;
+  height: 48px;
+  width: 128px;
+  font-size: large;
+  font-weight: bold;
+  border: solid rgb(68, 68, 68) 4px;
+  border-radius: 12px;
+}
+
+.continue:hover {
+  filter: brightness(90%);
+}
+
+.continue:active {
+  filter: brightness(85%);
+}
+
+.hidden {
+  opacity: 0%;
+  height: 0;
 }
