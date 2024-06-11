@@ -5,13 +5,15 @@ const Door = ({
     number: number;
     choice: number;
     setChoice: React.Dispatch<React.SetStateAction<number>>;
+    setPrize: React.Dispatch<React.SetStateAction<number>>;
     setLog: React.Dispatch<React.SetStateAction<string>>;
   };
 }) => {
-  const { number, choice, setChoice, setLog } = props;
+  const { number, choice, setChoice, setPrize, setLog } = props;
 
   const handleMouseDown = () => {
     setChoice(number);
+    setPrize(Math.floor(Math.random() * 3 + 1));
     setLog(
       `Door #${number} has a 33% to have the prize.\nThere is a ~66.6% chance the prize is behind the other doors.`
     );

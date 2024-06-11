@@ -7,6 +7,11 @@ function App() {
     "One door has a prize.\nTwo doors have a monster.\nChoose a door."
   );
   const [choice, setChoice] = useState<number>(0);
+  const [prize, setPrize] = useState<number>(Math.floor(Math.random() * 3 + 1));
+
+  const onContinue = () => {
+    if (choice === 0) return;
+  };
 
   return (
     <main className="main-content">
@@ -23,9 +28,9 @@ function App() {
         <p>~33.3%</p>
       </div>
 
-      <Door props={{ number: 1, choice, setChoice, setLog }} />
-      <Door props={{ number: 2, choice, setChoice, setLog }} />
-      <Door props={{ number: 3, choice, setChoice, setLog }} />
+      <Door props={{ number: 1, choice, setChoice, setPrize, setLog }} />
+      <Door props={{ number: 2, choice, setChoice, setPrize, setLog }} />
+      <Door props={{ number: 3, choice, setChoice, setPrize, setLog }} />
 
       <div className={`other-chance other-${choice}`}>
         <p>~66.6%</p>
@@ -34,6 +39,7 @@ function App() {
       <button
         className={`continue ${choice !== 0 ? "" : "hidden"}`}
         disabled={choice === 0}
+        onMouseDown={onContinue}
       >
         Continue
       </button>
