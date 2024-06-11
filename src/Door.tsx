@@ -26,7 +26,7 @@ const Door = ({
     setChoice(doorNumber);
     setPrize(Math.floor(Math.random() * 3 + 1) as 1 | 2 | 3);
     setLog(
-      `Door #${doorNumber} has a 33% to have the prize.\nThere is a ~66.6% chance the prize is behind the other doors.`
+      `Door #${doorNumber} has a 33% to have the prize.\nThere is a ~66.6% chance the prize is behind one of the other doors.`
     );
   };
 
