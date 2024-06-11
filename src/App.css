@@ -25,6 +25,14 @@ a:hover {
   font-weight: bold;
 }
 
+.wins {
+  color: gold;
+}
+
+.losses {
+  color: red;
+}
+
 .log {
   grid-column: span 3 / span 3;
   width: 100%;

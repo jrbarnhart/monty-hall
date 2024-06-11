@@ -67,7 +67,17 @@ function App() {
         <h1>Monty Hall Problem</h1>
       </a>
 
-      <p className="score">{`Prizes: ${wins} Devourings: ${losses}`}</p>
+      <p className="score">
+        {`Prizes: `}
+        <span className="wins">{`${wins}`}</span>
+        {` Devourings: `}
+        <span className="losses">{`${losses}`}</span>
+        {` Win Rate: ${
+          wins + losses === 0
+            ? "0%"
+            : ((wins / (wins + losses)) * 100).toFixed(2) + "%"
+        }`}
+      </p>
 
       <p className="log">{log}</p>
 
