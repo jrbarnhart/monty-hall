@@ -24,6 +24,7 @@ a:hover {
   grid-column: span 3 / span 3;
   font-size: large;
   font-weight: bold;
+  text-align: center;
 }
 
 .wins {
@@ -38,7 +39,6 @@ a:hover {
   grid-column: span 3 / span 3;
   width: 344px;
   min-height: 150px;
-  max-width: 600px;
   white-space: pre-wrap;
   font-size: large;
   font-weight: bold;
@@ -84,8 +84,8 @@ a:hover {
 }
 
 .door {
-  height: 8rem;
-  width: 4rem;
+  height: 144px;
+  width: 72px;
   background-color: rgb(104, 50, 6);
   border-radius: 4px;
   font-weight: bold;
@@ -173,4 +173,28 @@ a:hover {
 .hidden {
   opacity: 0%;
   height: 0;
+}
+
+@media (min-width: 768px) {
+  .title-header {
+    font-size: x-large;
+  }
+
+  .score {
+    font-size: x-large;
+  }
+
+  .log {
+    width: 640px;
+    font-size: x-large;
+  }
+
+  .door {
+    height: 288px;
+    width: 144px;
+  }
+
+  .door p {
+    font-size: x-large;
+  }
 }
