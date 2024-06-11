@@ -13,6 +13,8 @@ const Door = ({
     setGameState: React.Dispatch<
       React.SetStateAction<"choice" | "switch" | "result">
     >;
+    setWins: React.Dispatch<React.SetStateAction<number>>;
+    setLosses: React.Dispatch<React.SetStateAction<number>>;
   };
 }) => {
   const {
@@ -25,6 +27,8 @@ const Door = ({
     openedDoor,
     gameState,
     setGameState,
+    setWins,
+    setLosses,
   } = props;
 
   const handleMouseDown = () => {
@@ -38,13 +42,19 @@ const Door = ({
       if (doorNumber === openedDoor) return;
       setGameState("result");
       let resultText = "";
+      let winAugment = 0;
+      let lossAugment = 0;
       if (doorNumber === prize) {
         resultText =
           "You open the door and walk into the room...\n You find the fabulous prize!\nCongratulations!";
+        winAugment = 1;
       } else {
         resultText =
           "You open the door and walk into the room...\nYou don't even have time to scream before the beast devours you.";
+        lossAugment = 1;
       }
+      setWins((prev) => prev + winAugment);
+      setLosses((prev) => prev + lossAugment);
       setLog(resultText);
     }
   };
