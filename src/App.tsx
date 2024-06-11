@@ -51,6 +51,7 @@ function App() {
     }
   };
 
+  // Props for Door Components
   const generalDoorProps = {
     choice,
     setChoice,
