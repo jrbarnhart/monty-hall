@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { KeyboardEventHandler, useState } from "react";
 import "./App.css";
 import Door from "./Door";
 
@@ -16,6 +16,12 @@ function App() {
   );
   const [wins, setWins] = useState<number>(0);
   const [losses, setLosses] = useState<number>(0);
+
+  const handleKeyDown: KeyboardEventHandler = (e) => {
+    if (e.key === " " || e.key === "Enter") {
+      onContinue();
+    }
+  };
 
   const onContinue = () => {
     if (choice === 0 || gameState === "switch") return;
@@ -114,6 +120,7 @@ function App() {
         }`}
         disabled={choice === 0}
         onMouseDown={onContinue}
+        onKeyDown={handleKeyDown}
       >
         Continue
       </button>

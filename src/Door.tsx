@@ -1,3 +1,5 @@
+import { KeyboardEventHandler } from "react";
+
 const Door = ({
   props,
 }: {
@@ -30,6 +32,12 @@ const Door = ({
     setWins,
     setLosses,
   } = props;
+
+  const handleKeyDown: KeyboardEventHandler = (e) => {
+    if (e.key === " " || e.key === "Enter") {
+      handleMouseDown();
+    }
+  };
 
   const handleMouseDown = () => {
     if (gameState === "choice") {
@@ -71,6 +79,8 @@ const Door = ({
           : ""
       } ${gameState === "result" && doorNumber === prize && "prize"}`}
       role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       <p>{`Door #${doorNumber}`}</p>
     </div>
