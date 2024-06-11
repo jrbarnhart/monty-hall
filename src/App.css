@@ -73,6 +73,7 @@ a:hover {
   width: 4rem;
   background-color: rgb(104, 50, 6);
   border-radius: 4px;
+  font-weight: bold;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -83,7 +84,7 @@ a:hover {
 }
 
 .opened.door {
-  background-color: black;
+  background-color: rgb(156, 0, 0);
 }
 
 .other-chance {
@@ -121,7 +122,7 @@ a:hover {
   display: none;
 }
 
-.other.door::before {
+.other.door:not(.opened.door)::before {
   display: block;
 }
 
