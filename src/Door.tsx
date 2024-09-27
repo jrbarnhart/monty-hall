@@ -58,7 +58,7 @@ const Door = ({
         winAugment = 1;
       } else {
         resultText =
-          "You open the door and walk into the room...\nYou don't even have time to scream before the beast devours you.";
+          "You open the door and walk into the room...\nYou find a monster's lair. It devours you.";
         lossAugment = 1;
       }
       setWins((prev) => prev + winAugment);
