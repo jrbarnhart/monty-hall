@@ -1,6 +1,6 @@
 # Monty Hall Problem Simulator
 
-This project is a web application built with Vite, React, and TypeScript that simulates the famous [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem).
+This project is a web application built with Vite, React, and TypeScript that simulates the well-known [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem).
 
 [Check out the live preview.](https://jrbarnhart.github.io/monty-hall/)
 
