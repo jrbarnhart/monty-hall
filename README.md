@@ -25,10 +25,19 @@ The Monty Hall problem is a probability puzzle where the player is presented wit
 
 To run the project locally:
 
-1. Clone this repository.
-2. Install dependencies with `npm install` or `yarn install`.
-3. Start the development server with `npm run dev` or `yarn dev`.
-4. Open your browser and navigate to `http://localhost:5173` or whatever port you configure Vite's dev server to use.
+1. Clone this repository
+   ```sh
+   git clone https://github.com/jrbarnhart/monty-hall.git
+   ```
+3. Install dependencies
+   ```sh
+   npm install
+   ```
+5. Start the development server
+   ```sh
+   npm run dev
+   ```
+7. Open your browser and navigate to `http://localhost:5173` or whatever port you configure Vite's dev server to use.
 
 ## License
 
